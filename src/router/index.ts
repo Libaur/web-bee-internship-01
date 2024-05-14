@@ -1,12 +1,8 @@
-const navigateTo = (event: Event) => {
-  event.preventDefault();
-  window.history.pushState({}, "", (event.target as HTMLAnchorElement).href);
-  handleLocation();
-};
-
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", navigateTo);
-});
+import {
+  updateNavBarClassList,
+  updateStoredActiveLink,
+  restoreActiveLink,
+} from "../utils/nav-bar";
 
 const routes: Routes = {
   paths: {
@@ -30,7 +26,21 @@ const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
   document.getElementById("app")!.innerHTML = html;
   document.title = title;
+  restoreActiveLink();
 };
+
+const navigateTo = (event: Event) => {
+  event.preventDefault();
+  const target = event.target as HTMLAnchorElement;
+  window.history.pushState({}, "", target.href);
+  updateNavBarClassList(target);
+  updateStoredActiveLink(target);
+  handleLocation();
+};
+
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", navigateTo);
+});
 
 const router = window as unknown as CustomWindow;
 

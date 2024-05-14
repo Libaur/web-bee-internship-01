@@ -1,0 +1,11 @@
+@import "variables.css";
+
+.navbar-nav {
+  display: flex;
+  gap: 15px;
+  margin-left: 15px;
+}
+
+.nav-link.active {
+  background-color: var(--active-bg);
+}
