@@ -1,0 +1,61 @@
+@import "variables.css";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  max-width: 680px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 400px;
+  max-height: 480px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h4,
+h5 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h5 {
+  color: var(--second-tx);
+}
+
+.avatar {
+  max-width: 216px;
+  max-height: 216px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+.contacts {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.list-group {
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.greetings {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  position: absolute;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.final {
+  position: relative;
+}
