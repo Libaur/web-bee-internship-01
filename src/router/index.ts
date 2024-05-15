@@ -1,3 +1,5 @@
+import { renderMap } from "../map";
+import { setupPage } from "../utils";
 import {
   updateNavBarClassList,
   updateStoredActiveLink,
@@ -24,8 +26,8 @@ const handleLocation = async () => {
   const route = routes.paths[path] || routes.paths["404"];
   const title = routes.titles[path] || routes.titles["404"];
   const html = await fetch(route).then((data) => data.text());
-  document.getElementById("app")!.innerHTML = html;
-  document.title = title;
+  setupPage(html, title);
+  renderMap(path);
   restoreActiveLink();
 };
 

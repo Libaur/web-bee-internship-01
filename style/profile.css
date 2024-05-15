@@ -8,6 +8,11 @@
   max-width: 680px;
 }
 
+.skills {
+  display: flex;
+  gap: 13px;
+}
+
 aside {
   display: flex;
   flex-direction: column;
@@ -16,7 +21,7 @@ aside {
   min-width: 400px;
   max-height: 480px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 7px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -44,14 +49,14 @@ h5 {
 
 .list-group {
   display: inline-block;
-  border-radius: 10px;
+  border-radius: 7px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .greetings {
   background-color: white;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 7px;
   position: absolute;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

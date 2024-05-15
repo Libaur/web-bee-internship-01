@@ -1,9 +1,11 @@
 @import "normalize.css";
 @import "variables.css";
 @import "profile.css";
+@import "map.css";
+@import "loader.css";
 
 body {
-  background-color: #fafafa;
+  background-color: var(--bg);
 }
 
 main {

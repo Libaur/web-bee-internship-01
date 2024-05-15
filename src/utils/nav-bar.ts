@@ -6,11 +6,11 @@ function updateNavBarClassList(target: HTMLAnchorElement) {
 }
 
 function updateStoredActiveLink(target: HTMLAnchorElement) {
-  localStorage.setItem("activeLink", target.href);
+  sessionStorage.setItem("activeLink", target.href);
 }
 
 function restoreActiveLink() {
-  const activeLink = localStorage.getItem("activeLink");
+  const activeLink = sessionStorage.getItem("activeLink");
   if (activeLink) {
     document.querySelectorAll(".nav-link").forEach((element) => {
       const link = element as HTMLAnchorElement;
@@ -18,6 +18,8 @@ function restoreActiveLink() {
         link.classList.add("active");
       }
     });
+  } else {
+    document.querySelector("#main-page")?.classList.add("active");
   }
 }
 
