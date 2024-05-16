@@ -42,4 +42,5 @@ const updateStoredTimer = (elapsedTime: number) => {
   sessionStorage.setItem("timerValue", elapsedTime.toString());
 };
 
-export const renderTimer = (path: string) => path === "/time" && startTimer();
+export const renderTimer = (path: string) =>
+  path === "/web-bee-internship-01/time" && startTimer();
