@@ -2,4 +2,7 @@
   --second-tx: #8f8f8f;
   --bg: #fafafa;
   --active-bg: #f1f1f1;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --radius: 7px;
+  --main-padding: 30px 0 30px;
 }

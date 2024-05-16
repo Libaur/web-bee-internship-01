@@ -23,4 +23,9 @@ function restoreActiveLink() {
   }
 }
 
-export { updateNavBarClassList, updateStoredActiveLink, restoreActiveLink };
+function updateNavBar(target: HTMLAnchorElement) {
+  updateNavBarClassList(target);
+  updateStoredActiveLink(target);
+}
+
+export { updateNavBar, restoreActiveLink };
