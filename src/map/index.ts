@@ -13,7 +13,7 @@ function init() {
 }
 
 export function renderMap(path: string) {
-  if (path === "/web-bee-internship-01/map") {
+  if (path === "/map") {
     const mapContainer = document.querySelector("#map");
     if (mapContainer) {
       mapContainer.classList.add("lds-circle");
