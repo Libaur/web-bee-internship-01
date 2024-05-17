@@ -4,10 +4,10 @@ import { updateNavBar, restoreActiveLink } from "../utils/nav-bar";
 
 const routes: Routes = {
   paths: {
-    "404": "404.html",
-    "/": "/pages/index.html",
-    "/map": "/pages/map.html",
-    "/time": "/pages/timer.html",
+    "404": "/public/404.html",
+    "/": "/public/profile.html",
+    "/map": "/public/map.html",
+    "/time": "/public/timer.html",
   },
   titles: {
     "404": "Page not found",
@@ -19,8 +19,6 @@ const routes: Routes = {
 
 const handleLocation = async () => {
   const path = window.location.pathname;
-  console.log(path);
-
   const route = routes.paths[path] || routes.paths["404"];
   const title = routes.titles[path] || routes.titles["404"];
   const html = await fetch(route).then((data) => data.text());
