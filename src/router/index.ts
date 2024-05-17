@@ -1,21 +1,30 @@
-import { setupPage } from "../utils";
+import {
+  setupPage,
+  updateNavBarClassList,
+  updateStoredActiveLink,
+  restoreActiveLink,
+} from "../utils";
 import { renderMap } from "../map";
-import { updateNavBar, restoreActiveLink } from "../utils/nav-bar";
 
 const routes: Routes = {
   paths: {
-    "404": "/public/404.html",
-    "/": "/public/profile.html",
-    "/map": "/public/map.html",
-    "/time": "/public/timer.html",
+    "/web-bee-internship-01/404": "/public/404.html",
+    "/web-bee-internship-01/": "/public/profile.html",
+    "/web-bee-internship-01/map": "/public/map.html",
+    "/web-bee-internship-01/time": "/public/timer.html",
   },
   titles: {
-    "404": "Page not found",
-    "/": "Profile",
-    "/map": "Map",
-    "/time": "Time",
+    "/web-bee-internship-01/404": "Page not found",
+    "/web-bee-internship-01/": "Profile",
+    "/web-bee-internship-01/map": "Map",
+    "/web-bee-internship-01/time": "Time",
   },
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  window.history.replaceState({}, "", "/web-bee-internship-01/");
+  handleLocation();
+});
 
 const handleLocation = async () => {
   const path = window.location.pathname;
@@ -31,7 +40,8 @@ const navigateTo = (event: Event) => {
   event.preventDefault();
   const target = event.target as HTMLAnchorElement;
   window.history.pushState({}, "", target.href);
-  updateNavBar(target);
+  updateNavBarClassList(target);
+  updateStoredActiveLink(target);
   handleLocation();
 };
 
