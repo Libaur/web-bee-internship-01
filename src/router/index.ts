@@ -1,12 +1,17 @@
-import { setupPage, renderPage } from "../utils";
-import { updateNavBar, restoreActiveLink } from "../utils/nav-bar";
+import { renderMap } from "../map";
+import { setupPage } from "../utils";
+import {
+  updateNavBarClassList,
+  updateStoredActiveLink,
+  restoreActiveLink,
+} from "../utils/nav-bar";
 
 const routes: Routes = {
   paths: {
-    "404": "/pages/404.html",
-    "/": "/pages/index.html",
-    "/map": "/pages/map.html",
-    "/time": "/pages/timer.html",
+    "404": "/src/pages/404.html",
+    "/": "/src/pages/index.html",
+    "/map": "/src/pages/map.html",
+    "/time": "/src/pages/timer.html",
   },
   titles: {
     "404": "Page not found",
@@ -22,7 +27,7 @@ const handleLocation = async () => {
   const title = routes.titles[path] || routes.titles["404"];
   const html = await fetch(route).then((data) => data.text());
   setupPage(html, title);
-  renderPage(path);
+  renderMap(path);
   restoreActiveLink();
 };
 
@@ -30,7 +35,8 @@ const navigateTo = (event: Event) => {
   event.preventDefault();
   const target = event.target as HTMLAnchorElement;
   window.history.pushState({}, "", target.href);
-  updateNavBar(target);
+  updateNavBarClassList(target);
+  updateStoredActiveLink(target);
   handleLocation();
 };
 

@@ -1,10 +1,5 @@
 @import "variables.css";
 
-main {
-  background-color: var(--active-bg);
-  padding: var(--main-padding);
-}
-
 .about {
   display: flex;
   flex-direction: column;
@@ -23,11 +18,11 @@ aside {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 420px;
+  min-width: 400px;
   max-height: 480px;
   background-color: white;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: 7px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h4,
@@ -49,21 +44,21 @@ h5 {
 .contacts {
   margin-top: 10px;
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .list-group {
   display: inline-block;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: 7px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .greetings {
   background-color: white;
   padding: 15px;
-  border-radius: var(--radius);
+  border-radius: 7px;
   position: absolute;
-  box-shadow: var(--shadow);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .final {

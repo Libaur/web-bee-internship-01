@@ -1,14 +1,4 @@
-import { renderMap } from "../map";
-import { renderTimer } from "../timer";
-
-function setupPage(html: string, title: string) {
-  document.querySelector("#app")!.innerHTML = html;
+export function setupPage(html: string, title: string) {
+  document.getElementById("app")!.innerHTML = html;
   document.title = title;
 }
-
-function renderPage(path: string) {
-  renderMap(path);
-  renderTimer(path);
-}
-
-export { setupPage, renderPage };
