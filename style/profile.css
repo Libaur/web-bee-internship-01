@@ -23,7 +23,7 @@ aside {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 420px;
+  min-width: 420px;
   max-height: 480px;
   background-color: white;
   border-radius: var(--radius);
@@ -68,36 +68,4 @@ h5 {
 
 .final {
   position: relative;
-}
-
-@media screen and (max-width: 980px) {
-  .avatar {
-    max-width: 146px;
-    max-height: 146px;
-  }
-
-  h3 {
-    font-size: 1.2em;
-  }
-
-  h4,
-  h5 {
-    font-size: 1.1em;
-  }
-}
-
-@media screen and (max-width: 765px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .about {
-    order: 2;
-  }
-
-  aside {
-    order: 1;
-    max-width: 60%;
-    margin: 0 auto;
-  }
 }
