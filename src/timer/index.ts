@@ -20,9 +20,10 @@ function useStoredTimer() {
 
 function updateTimer() {
   const elapsedTime = Date.now() - startTime;
+  const formattedTime = formatTime(elapsedTime);
   const count = document.querySelector("#count");
   if (count) {
-    count.textContent = formatTime(elapsedTime);
+    count.textContent = formattedTime;
   }
   updateStoredTimer(elapsedTime);
   requestAnimationFrame(updateTimer);
