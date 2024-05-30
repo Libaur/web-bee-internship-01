@@ -20,9 +20,10 @@ function useStoredTimer() {
 
 function updateTimer() {
   const elapsedTime = Date.now() - startTime;
+  const formattedTime = formatTime(elapsedTime);
   const count = document.querySelector("#count");
   if (count) {
-    count.textContent = formatTime(elapsedTime);
+    count.textContent = formattedTime;
   }
   updateStoredTimer(elapsedTime);
   requestAnimationFrame(updateTimer);
@@ -40,3 +41,5 @@ const padZero = (value: number) => value.toString().padStart(2, "0");
 const updateStoredTimer = (elapsedTime: number) => {
   sessionStorage.setItem("timerValue", elapsedTime.toString());
 };
+
+export const renderTimer = (path: string) => path === "/time" && startTimer();
