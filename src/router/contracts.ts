@@ -1,9 +1,8 @@
 type RoutesContent = {
   [key: string]: string;
-  "404": string;
-  "/": string;
-  "/map": string;
-  "/time": string;
+  "/web-bee-internship-01/": string;
+  "/web-bee-internship-01/map": string;
+  "/web-bee-internship-01/time": string;
 };
 
 type Routes = {
