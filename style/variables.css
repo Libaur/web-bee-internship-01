@@ -1,5 +1,6 @@
 :root {
   --second-tx: #8f8f8f;
+  --error-tx: #836868;
   --bg: #fafafa;
   --active-bg: #f1f1f1;
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

@@ -1,11 +1,10 @@
-const format = {
-  milliseconds: 1000 * 60 * 60,
-  seconds: 1000 * 60,
-};
+import { format } from "../constants";
 
-let startTime: number;
+let startTime;
 
-window.addEventListener("load", startTimer);
+addEventListener("load", () => {
+  startTimer();
+});
 
 function startTimer() {
   startTime = Date.now();
@@ -20,26 +19,23 @@ function useStoredTimer() {
 
 function updateTimer() {
   const elapsedTime = Date.now() - startTime;
-  const formattedTime = formatTime(elapsedTime);
-  const count = document.querySelector("#count");
+  const count = document.getElementById("count");
   if (count) {
-    count.textContent = formattedTime;
+    count.textContent = formatTime(elapsedTime);
   }
   updateStoredTimer(elapsedTime);
   requestAnimationFrame(updateTimer);
 }
 
-function formatTime(time: number) {
+function formatTime(time) {
   const hours = Math.floor(time / format.milliseconds);
   const minutes = Math.floor((time % format.milliseconds) / format.seconds);
   const seconds = Math.floor((time % format.seconds) / 1000);
   return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
 }
 
-const padZero = (value: number) => value.toString().padStart(2, "0");
+const padZero = (value) => value.toString().padStart(2, "0");
 
-const updateStoredTimer = (elapsedTime: number) => {
+const updateStoredTimer = (elapsedTime) => {
   sessionStorage.setItem("timerValue", elapsedTime.toString());
 };
-
-export const renderTimer = (path: string) => path === "/time" && startTimer();
