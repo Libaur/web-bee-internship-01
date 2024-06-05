@@ -1,6 +1,6 @@
-import { Profile } from "../pages/profile";
-import { Map } from "../pages/map";
-import { Time } from "../pages/time";
+import Profile from "../pages/profile";
+import Map from "../pages/map";
+import Time from "../pages/time";
 
 const format = {
   milliseconds: 1000 * 60 * 60,
@@ -20,9 +20,9 @@ const titles = {
 };
 
 const pages = {
-  profile: Profile(),
-  map: Map(),
-  time: Time(),
+  profile: Profile,
+  map: Map,
+  time: Time,
 };
 
 const styles = {
@@ -37,17 +37,4 @@ const city = {
   balloon: "Город на Волге",
 };
 
-const routes = {
-  paths: {
-    [paths.profile]: [pages.profile],
-    [paths.map]: [pages.map],
-    [paths.time]: [pages.time],
-  },
-  titles: {
-    [paths.profile]: [titles.profile],
-    [paths.map]: [titles.map],
-    [paths.time]: [titles.time],
-  },
-};
-
-export { routes, paths, format, city, styles };
+export { paths, pages, titles, format, city, styles };

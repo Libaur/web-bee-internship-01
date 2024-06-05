@@ -1,5 +1,4 @@
-export function Time() {
-  return `<div class="wrapper">
+export default `<div class="wrapper">
     <div class="container">
       <div class="timer">
         <section class="time">
@@ -9,4 +8,4 @@ export function Time() {
       </div>
     </div>
   </div>`;
-}
+

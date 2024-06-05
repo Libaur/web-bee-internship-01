@@ -1,5 +1,4 @@
-export function Profile() {
-    return `<main>
+export default `<main>
       <div class="container">
         <div class="about">
           <section>
@@ -78,5 +77,3 @@ export function Profile() {
         </aside>
       </div>
     </main>`;
-  }
-  

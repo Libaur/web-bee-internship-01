@@ -1,10 +1,23 @@
-import { routes, paths, styles } from "../constants";
+import { paths, pages, titles, styles } from "../constants";
 import {
   updateNavBarClassList,
   updateStoredActiveLink,
   restoreActiveLink,
 } from "../utils";
 import { renderMap } from "../map";
+
+const routes = {
+  paths: {
+    [paths.profile]: [pages.profile],
+    [paths.map]: [pages.map],
+    [paths.time]: [pages.time],
+  },
+  titles: {
+    [paths.profile]: [titles.profile],
+    [paths.map]: [titles.map],
+    [paths.time]: [titles.time],
+  },
+};
 
 addEventListener("DOMContentLoaded", () => {
   redirectToProfile();
@@ -22,7 +35,7 @@ onpopstate = (event) => {
 
 function redirectToProfile() {
   if (location.pathname === "/") {
-    history.replaceState({}, "", paths.profile)
+    history.replaceState({}, "", paths.profile);
   }
 }
 
