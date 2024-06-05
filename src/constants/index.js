@@ -8,9 +8,9 @@ const format = {
 };
 
 const paths = {
-  profile: "/web-bee/",
-  map: "/web-bee/map",
-  time: "/web-bee/time",
+  profile: "/web-bee-internship-01/",
+  map: "/web-bee-internship-01/map",
+  time: "/web-bee-internship-01/time",
 };
 
 const titles = {
