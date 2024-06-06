@@ -12,12 +12,30 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
 
+    <script type="text/javascript">
+      (function (location) {
+        if (location.search[1] === "/") {
+          const decoded = location.search
+            .slice(1)
+            .split("&")
+            .map((search) => {
+              return search.replace(/~and~/g, "&");
+            })
+            .join("?");
+          history.replaceState(
+            null,
+            null,
+            location.pathname.slice(0, -1) + decoded + location.hash
+          );
+        }
+      })(location);
+    </script>
     <script
       src="https://api-maps.yandex.ru/2.1/?lang=ru-RU&apikey=72cee0f0-2016-4528-a973-8c16cd650c5c"
       type="text/javascript"
     ></script>
     <title>Legacy routing</title>
-    <script type="module" crossorigin src="./assets/index-VyMHuBgL.js"></script>
+    <script type="module" crossorigin src="./assets/index-D5XPTm9w.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BZ-_-7Xz.css">
   </head>
   <body>
